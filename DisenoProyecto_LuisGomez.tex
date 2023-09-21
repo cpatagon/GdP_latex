@@ -1,0 +1,175 @@
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+codirector, % Uncomment to add a codirector to the title page
+]{charter} 
+\usepackage{enumitem}
+\usepackage{pdflscape}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+% El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
+\titulo{Medidor de material particulado fino}
+
+% Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
+\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+%\posgrado{Carrera de Especialización en Internet de las Cosas} 
+%\posgrado{Carrera de Especialización en Intelegencia Artificial}
+%\posgrado{Maestría en Sistemas Embebidos} 
+%\posgrado{Maestría en Internet de las cosas}
+
+% Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
+\autor{Mg. Luis Alberto Gómez Parada} 
+
+% El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
+\director{Ing. Juan Manuel Cruz}
+\pertenenciaDirector{Profesor Adjunto UBA} 
+% FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
+\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+\pertenenciaCoDirector{FIUBA}
+
+% Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
+\cliente{Dr. Zoë Fleming}
+\empresaCliente{Centro del Clima y la Resiliencia CR2, Universidad de Chile}
+
+% Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
+\juradoUno{Nombre y Apellido (1)}
+\pertenenciaJurUno{pertenencia (1)} 
+\juradoDos{Nombre y Apellido (2)}
+\pertenenciaJurDos{pertenencia (2)}
+\juradoTres{Nombre y Apellido (3)}
+\pertenenciaJurTres{pertenencia (3)}
+ 
+\fechaINICIO{22 de agosto de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{12 de octubre de 2023} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{15 de Junio de 2024}	%Fecha de defensa pública del trabajo final
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pagebreak
+
+
+\thispagestyle{empty}
+{\setlength{\parskip}{0pt}
+\tableofcontents{}
+}
+\pagebreak
+
+
+\section*{Registros de cambios}
+\label{sec:registro}
+
+
+\begin{table}[ht]
+\label{tab:registro}
+\centering
+\begin{tabularx}{\linewidth}{@{}|c|X|c|@{}}
+\hline
+\rowcolor[HTML]{C0C0C0} 
+Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
+0      & Creación del documento                                 &\fechaInicioName \\ \hline
+ & \textbf{Se completa hasta el punto 5:}                 & \\
+ & - Acta de constitución del proyecto           & \\
+ & - Descripción  del proyecto a realizar        & \\
+1& - Identificación y análisis de los interesados&  07 de septiembre de 2023\\
+ & - Propósito del proyecto                      & \\
+ & - Alcance del proyecto                        & \\
+ & - Supuestos del proyecto                      & \\
+\hline
+  & \textbf{Se completa hasta el punto 9 inclusive:} & \\
+  & - Requerimientos                       & \\
+2 & - Historias de usuario                 &14 de Septiembre 2023 \\
+& - Entregables principales                & \\
+& - Desglose de trabajo                    & \\
+\hline
+& \textbf{Se completa hasta el punto 12 inclusive:} & \\
+& - Diagrama de Activity On Node                       & \\
+3 & - Diagrama de Gantt                 &20 de Septiembre 2023 \\
+& - Presupuesto detallado del proyecto                & \\
+%		  En distintas líneas \newline
+%		  Así                                                    & dd/mm/aaaa \\ \hline
+%3      & Se completa hasta el punto 11 inclusive                & dd/mm/aaaa \\ \hline
+%4      & Se completa el plan	                                 & dd/mm/aaaa \\ 
+
+\hline
+\end{tabularx}
+\end{table}
+
+\pagebreak
+
+
+
+\section*{Acta de constitución del proyecto}
+\label{sec:acta}
+\input{00_acta.tex}
+
+\section{1. Descripción técnica-conceptual del proyecto a realizar}
+\label{sec:descripcion}
+
+\input{01_descripcion.tex}
+
+\section{2. Identificación y análisis de los interesados}
+\label{sec:interesados}
+\input{02_identificacion.tex}
+
+\section{3. Propósito del proyecto}
+\label{sec:proposito}
+\input{03_proposito.tex}
+
+\section{4. Alcance del proyecto}
+\label{sec:alcance}
+\input{04_alcance.tex}
+
+\section{5. Supuestos del proyecto}
+\label{sec:supuestos}
+\input{05_supuestos.tex}
+
+\section{6. Requerimientos}
+\label{sec:requerimientos}
+\input{06_requerimientos.tex}
+
+\section{7. Historias de usuarios (\textit{Product backlog})}
+\label{sec:backlog}
+\input{07_historias.tex}
+
+\section{8. Entregables principales del proyecto}
+\label{sec:entregables}
+\input{08_entregables.tex}
+
+\section{9. Desglose del trabajo en tareas}
+\label{sec:wbs}
+\input{09_tareas.tex}
+
+\newpage
+\section{10. Diagrama de Activity On Node}
+\label{sec:AoN}
+\input{10_Diagrama_Actividades.tex}
+
+
+\section{11. Diagrama de Gantt}
+\label{sec:gantt}
+%\begin{landscape}
+\input{11_Diagrama_Gantt.tex}
+%\end{landscape}
+
+\section{12. Presupuesto detallado del proyecto}
+\label{sec:presupuesto}
+\input{12_Presupuesto.tex}
+
+
+\section{13. Gestión de riesgos}
+\label{sec:riesgos}
+\input{13_riesgos.tex}
+
+\section{14. Gestión de la calidad}
+\label{sec:calidad}
+\input{14_calidad.tex}
+
+\section{15. Procesos de cierre}    
+\label{sec:cierre}
+\input{15_cierre.tex}
+
+
+\end{document}

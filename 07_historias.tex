@@ -1,0 +1,69 @@
+%!TEX root = DisenoProyecto_LuisGomez.tex
+%\begin{consigna}{red}
+%Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+%
+%El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+%
+%Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+%\end{consigna}
+
+
+A continuación, se describen diversas historias de usuario junto con su correspondiente ponderación de esfuerzo relativo o \textit{story points (SP)}. Para la ponderación de la historia utilizamos la fórmula:
+
+\[
+\text{SP} = \text{Fibo}(PtCarga + 1.5 \times PtCompl + 2 \times PtIncert)
+\]
+
+donde:
+\begin{itemize}
+	\item \textbf{SP}: Story points
+	\item \textbf{Fibo}: Función que asigna el número de Fibonacci más cercano al argumento.
+	\item \textbf{PtCarga}: Puntaje por carga de trabajo (1 a 5).
+	\item \textbf{PtCompl}: Puntaje por complejidad (1 a 5).
+	\item \textbf{PtIncert}: Puntaje por incertidumbre (1 a 5).
+\end{itemize}
+
+Notar que los puntajes son multiplicados por factores de ponderación antes de ser sumados.
+
+\subsection{Historia de usuario 1: monitoreo de concentraciones}
+``Como usuario quiero poder ver las concentraciones horarias y diarias de MP2,5 que registra el sensor.''
+\begin{itemize}
+	\item PtCarga = 2
+	\item PtCompl = 1
+	\item PtIncert = 1
+	\item [SP = 8]
+\end{itemize}
+
+\subsection{Historia de administrador 1: registro funcionamiento de sensores}
+``Como administrador quiero que los sensores puedan generar una señal de alerta cuando uno de ellos comienza a fallar o deja de registrar.''
+\begin{itemize}
+	\item PtCarga = 3
+	\item PtCompl = 4
+	\item PtIncert = 2
+	\item [SP = 13]
+\end{itemize}
+
+\subsection{Historia de usuario 2: alarmas por concentración}
+``Como usuario quiero que el instrumento me indique cuando existen valores críticos de concentración, que puedan ser riesgosos para la salud de la población.''
+\begin{itemize}
+	\item PtCarga = 4
+	\item PtCompl = 3
+	\item PtIncert = 3
+	\item [SP = 21]
+\end{itemize}
+
+\subsection{Historia de administrador 2: precisión de la concentración}
+``Como administrador quiero conocer la precisión de los valores que estoy registrando.''
+\begin{itemize}
+	\item PtCarga = 4
+	\item PtCompl = 3
+	\item PtIncert = 3
+	\item [SP = 21]
+\end{itemize}
+
+% ... Puedes seguir añadiendo más historias de usuario
+
+
+
+% Añadir más historias de usuario según sea necesario.
+
