@@ -21,31 +21,91 @@
 
 
 
-Elija al menos diez requerimientos que a su criterio sean los más importantes/críticos/que aportan más valor y para cada uno de ellos indique las acciones de verificación y validación que permitan asegurar su cumplimiento.
+Se eligieron diez requerimientos que a nuestros criterio son los más relevantes y que aportan valor al cliente. Para cada uno de ellos se indicarán  las acciones de verificación y validación que permitan asegurar su cumplimiento.
 
-\begin{itemize} 
-\item Req \#1: Funcionamiento correcto y preciso de los sensores para medir las concentraciones de MP2,5.
-
-\begin{itemize}
-	\item Verificación: Realizar pruebas y simulaciones para asegurarse de que los sensores miden con precisión las concentraciones de MP2,5. Consultar con expertos y revisar las hojas de datos de los sensores para confirmar la precisión y fiabilidad de las mediciones.
-	\item Validación: Realizar mediciones en campo y comparar los resultados obtenidos con mediciones estándar y aceptadas para asegurar la exactitud y conformidad de los sensores en condiciones reales.
-\end{itemize}
-
-\item Req \#2: Transmisión de datos segura y sin fallos desde los sensores hasta la base de datos.
-
-\begin{itemize}
-	\item Verificación: Probar la transmisión de datos en diferentes condiciones y con diferentes volúmenes de datos para asegurar la robustez y fiabilidad del sistema de transmisión.
-	\item Validación: Confirmar con el cliente mediante pruebas de transmisión de datos en tiempo real para asegurar que los datos se reciben correctamente y en tiempo.
-\end{itemize}
-
-\item Req \#3: Sistema de alimentación energética ininterrumpida y fiable.
-
-\begin{itemize}
-	\item Verificación: Realizar pruebas de estrés al sistema de alimentación para asegurar su capacidad de mantenerse operativo en situaciones de corte de energía.
-	\item Validación: Demostrar al cliente mediante pruebas de funcionamiento prolongado que el sistema puede operar de forma continua sin interrupciones debidas a fallos de energía.
-\end{itemize}
+\begin{description} 
+	
+	\item [Req \#1:] exactitud y precisión del instrumento para estimar las concentraciones atmosféricas de MP2,5.
+	
+	\begin{description}
+		\item [Verificación:] Se deben realizar al menos tres pruebas comparativas con el fin de asegurar que los sensores proporcionan medidas de las concentraciones de MP2,5 con la precisión y exactitud requeridas. El éxito de la verificación se determinará al lograr una precisión y exactitud que se encuentre en un rango aceptable entre los sensores de bajo costo y los métodos de referencia estandarizados. Esta condición puede ser validada a través de una prueba de hipótesis.
+		\item [Validación:] Los resultados de las pruebas comparativas se presentarán a los clientes para su evaluación y aprobación, asegurando así que las mediciones cumplen con sus expectativas y requisitos.
+	\end{description}
 
 
+	\item [Req \#2:] transmisión de datos segura y sin fallos desde los sensores hasta la base de datos.
+	
+	\begin{description}
+		\item [Verificación:] Se llevarán a cabo pruebas de transmisión de datos bajo diversas condiciones y con distintos volúmenes de datos, con el objetivo de evaluar la robustez y fiabilidad del sistema de transmisión, y asegurarse de que puede manejar variaciones en la carga y en el entorno operativo sin errores ni pérdidas de datos.
+		\item [Validación:] Se efectuarán pruebas de transmisión de datos en tiempo real con el cliente para verificar que los datos se reciben de manera íntegra y en el tiempo adecuado, corroborando así el cumplimiento del requerimiento a satisfacción del cliente.
+	\end{description}
 
-\end{itemize}
+
+	\item [Req \#3:] sistema de alimentación energética fiable.
+	
+	\begin{description}
+		\item [Verificación:] Se efectuarán pruebas de estrés al sistema de alimentación, evaluando su resiliencia y capacidad para mantenerse operativo durante distintos intervalos de tiempo en situaciones de interrupción de energía. Asimismo, se determinará el periodo de autonomía del equipo en ausencia de aporte energético, para asegurar su fiabilidad en condiciones de fallo de suministro eléctrico.
+		\item [Validación:] Junto con el cliente, se llevarán a cabo pruebas controladas para demostrar que el sistema es capaz de operar de forma ininterrumpida y efectiva, incluso cuando se presentan interrupciones en el suministro de energía externa, confirmando así la satisfacción del cliente respecto a la fiabilidad del sistema de alimentación energética.
+	\end{description}
+
+
+	\item [Req \#4:] almacenamiento de datos en el instrumento.
+	
+	\begin{description}
+		\item [Verificación:] se verificará la integridad y cantidad de los datos almacenados en la memoria local durante un periodo ininterrumpido de 48 horas. Los datos serán clasificados como válidos o no válidos, siendo los válidos aquellos que cumplen con el formato y rango adecuados.
+		\item [Validación:] se realizarán pruebas controladas en presencia del cliente para demostrar la capacidad del sistema de operar de forma continua y efectiva, asegurando el correcto almacenamiento de datos, incluso en situaciones de interrupciones en el suministro de energía externa.
+	\end{description}
+
+
+	\item [Req \#5:] datos que cuentan con un índice temporal sincronizado con la hora actual.
+	
+	\begin{description}
+		\item [Verificación:] se verificará que cada uno de los datos cuente con un índice temporal sincronizado con la hora y fecha previamente programadas. Se preferirá que el RTC (Reloj en Tiempo Real) pueda sincronizarse con un servidor NTP en hora UTC o GMT. En la medida de lo posible, se evaluará cualquier pérdida de sincronización del RTC con el servidor NTP.
+		\item [Validación:] Se presentará el formato del índice temporal de los datos al cliente para su validación, asegurando que cumple con sus expectativas y requerimientos.
+	\end{description}
+
+	\item [Req \#6:] funcionamiento efectivo del equipo bajo diversas condiciones ambientales.
+	
+	\begin{description}
+		\item [Verificación:] Se evaluará el desempeño del equipo en diversas condiciones ambientales exteriores, incluyendo, pero no limitándose a, bajas temperaturas (igual o inferiores a 0 grados Celsius), alta humedad relativa (100\% de humedad relativa del aire), precipitaciones y viento. El objetivo es asegurar la precisión en la medición y registro de datos bajo estas condiciones, determinando así un rango óptimo de condiciones de funcionamiento.
+		\item [Validación:] Se presentarán al cliente los rangos de condiciones óptimas de funcionamiento determinados, para su validación y acuerdo, asegurando que el equipo cumple con sus expectativas y necesidades en los distintos escenarios ambientales previstos.
+	\end{description}
+
+
+\item [Req \#7:] disponibilidad de un manual de usuario comprehensivo.
+
+\begin{description}
+	\item [Verificación:] se comprobará la disponibilidad de un manual de usuario completo, que incluirá la descripción del funcionamiento básico del equipo, requisitos de suministro energético, condiciones ambientales operativas, diagnóstico y resolución de problemas, procesos de configuración y encendido, características de los datos de salida, especificaciones de emplazamiento, entre otros aspectos relevantes. El manual deberá ser claro, conciso y suficientemente detallado para permitir la operación independiente del equipo por parte del usuario.
+	\item [Validación:] Se presentará el manual de usuario al cliente para su revisión, a fin de asegurar que cumple con los requerimientos mínimos y proporciona la información necesaria para la operación adecuada del instrumento, ajustándose según las observaciones y sugerencias del cliente.
+\end{description}
+
+\item [Req \#8:] disponibilidad de parámetros básicos de registro de concentración de MP2,5.
+
+\begin{description}
+	\item [Verificación:] se evaluara mediante observación que el monitor o instrumento deberá almacenar datos en valores de concentración horaria, diaria y promedio móvil de 24 horas de MP2,5, con sus respectivas desviaciones estándar.
+	\item [Validación:] se presentará los registros al cliente para ver el grado de conformidad de estos.
+\end{description}
+
+\item [Req \#9:] Implementación de buenas prácticas de programación en el software del instrumento.
+
+\begin{description}
+	\item [Verificación:] Se realizará una revisión exhaustiva y se documentará el cumplimiento de buenas prácticas de programación, conforme a estándares reconocidos internacionalmente, tales como MISRA C o Linux Kernel Coding Style. Se evaluará la consistencia en el estilo de codificación, la adecuación y claridad de los comentarios y la documentación del código, y la implementación de revisiones periódicas de código y herramientas automatizadas para la identificación y corrección de errores y desviaciones del estilo de codificación adoptado.
+	\item [Validación:] Se presentará al cliente un informe detallando con las horas de operación continua del sistema y la ocurrencia de códigos de error durante su funcionamiento, demostrando así la robustez y fiabilidad del software implementado.
+\end{description}
+
+\item [Req \#10:] Verificación de consumos eléctricos y de datos.
+
+\begin{description}
+	\item [Verificación:] Se medirá y documentará el consumo eléctrico y de datos en condiciones normales de funcionamiento del equipo, asegurando que se mantengan dentro de los límites establecidos.
+	\item [Validación:] Se presentará al cliente un informe detallado con las mediciones de consumos eléctricos y de datos, para su revisión y aprobación.
+\end{description}
+
+
+
+
+
+
+
+
+\end{description}
 
