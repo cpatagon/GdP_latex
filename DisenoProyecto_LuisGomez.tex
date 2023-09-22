@@ -5,7 +5,10 @@ codirector, % Uncomment to add a codirector to the title page
 \usepackage{enumitem}
 \usepackage{pdflscape}
 \usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
+%\usetikzlibrary{shapes,arrows}
+%\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, backgrounds, fit}
+
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
 \titulo{Medidor de material particulado fino}
@@ -22,7 +25,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Ing. Juan Manuel Cruz}
-\pertenenciaDirector{Profesor Adjunto UBA} 
+\pertenenciaDirector{FIUBA} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 \codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
 \pertenenciaCoDirector{FIUBA}

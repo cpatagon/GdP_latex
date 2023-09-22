@@ -39,12 +39,48 @@ Dentro del contexto de las soluciones para el monitoreo ambiental, estos disposi
 
 En la figura \ref{fig:diagBloques}, se presenta el diagrama en bloques del instrumento. En él, se puede apreciar un microcontrolador central responsable de gestionar: tres sensores de MP2,5, encargados de medir el contaminante; un sistema de almacenamiento de datos local y un sistema encargado de la transmisión de los registros hacia un servidor remoto. Además, incluye un reloj de tiempo real (RTC) que registra el momento de cada medición y un sistema de alimentación, compatible con la red eléctrica.
 
+
 \begin{figure}[htpb]
-	\centering 
-	\includegraphics[width=.9\textwidth]{./Figuras/diagBloques.png}
-	\caption{Diagrama en bloques del sistema.}
+	\centering
+	\shorthandoff{<>} % Desactivar caracteres problemáticos
+	\begin{tikzpicture}[ node distance=1cm]
+	% Nodes
+	\node (microcontroller) [draw, rectangle, fill=blue!10!white, align=center] 								{\textbf{Microcontrolador}}; 
+	\node (sensor1) 		
+	[above right=of microcontroller, draw, rectangle, fill=red!10!white, align=center, yshift=0.2cm, xshift=0.3cm] 	{Sensor de\\MP2,5};
+	\node (sensor2) 		
+	[right=of microcontroller, draw, rectangle, fill=red!10!white, align=center] 		
+	{Sensor de\\MP2,5};
+	\node (sensor3) 		[below right=of microcontroller, draw, rectangle, fill=red!10!white, align=center, , yshift=-0.2cm, xshift=0.3cm] 	{Sensor de\\MP2,5};
+	\node (storage) 		[below=of microcontroller, draw, fill=yellow!10!white, rectangle, align=center] 		{Sistema de\\almacenamiento};
+	\node (transmission) 	[above=of microcontroller, draw, rectangle, align=center] 		{Sistema de\\transmisión de datos};
+	\node (rtc) 			[above left=of microcontroller, draw, rectangle, align=center, yshift=-1.2cm, xshift=-.33cm]  {RTC};
+	\node (power) 			[below left=of microcontroller, draw, rectangle, align=center,yshift=-0.2cm, xshift=0.5cm] 	{Fuente de\\poder};
+	\node (cabinet) 		[above right=of transmission,  xshift=-6.8cm,yshift=-0.7cm]     {\textbf{Gabinete}};
+	
+	% Bounding Box
+	\begin{scope}[on background layer]
+	\node[fill=gray!10,  draw, rectangle, rounded corners, fit=(cabinet) (sensor2) (power) (storage) (transmission)] {};
+	\end{scope}
+	
+	% Arrows
+	\draw[<->] (microcontroller) -- (sensor1);
+	\draw[<->] (microcontroller) -- (sensor2);
+	\draw[<->] (microcontroller) -- (sensor3);
+	\draw[<->] (microcontroller) -- (storage);
+	\draw[<->] (microcontroller) -- (transmission);
+	\draw[->] (rtc) -- (microcontroller);
+	\draw[->] (power) -- (microcontroller);
+	\end{tikzpicture}
+	\shorthandon{<>} % Reactivar caracteres problemáticos
+	\caption{Esquema de bloques del instrumento.}
 	\label{fig:diagBloques}
 \end{figure}
+	
+
+
+
+
 
 El funcionamiento de los sensores escogidos para esta investigación se fundamenta en el fenómeno de la difracción de luz láser. Concretamente, cuando una partícula en suspensión intercepta un haz láser, se produce una dispersión angular de la luz, la cual es proporcional al tamaño de la partícula involucrada. El patrón de dispersión óptica resultante se captura mediante un detector. Este enfoque presenta algunas mejoras sobre los métodos gravimétricos convencionales, al ofrecer ventajas como la reducción de costos y un incremento notable en la velocidad de muestreo. Sin embargo, es imperativo reconocer ciertas limitaciones inherentes a esta tecnología, tales como una menor precisión y exactitud en comparación con técnicas estándar. Cabe señalar que los instrumentos ópticos todavía no han obtenido la certificación de la Agencia de Protección Ambiental (EPA) como métodos analíticos estándar para la cuantificación de partículas finas en el aire.
 

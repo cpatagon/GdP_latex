@@ -21,23 +21,23 @@
 %De ser necesario indicar los caminos semicríticos y analizar sus tiempos mediante un cuadro.
 %Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color, como se muestra en el siguiente ejemplo:
 
-El diagrama de flujo de la figura \ref{fig:diagrama}, se presenta una estructura general para la ejecución del proyecto de tesis. Comenzando con la gestión del proyecto, el esquema traza una ruta cronológica que incluye diseño, construcción de hardware y programación de firmware, los cuales ocurren de manera concurrente. Estas fases convergen en una etapa de pruebas, seguida de ajustes finales y la generación de documentación académica. Finalmente, el proyecto culmina con la entrega del trabajo final. Notar que cada una de las celdas contiene el tiempo estimado de las actividades y el tiempo acumulado general, con el formato:  \textbf{\textit{``tiempo bloque actividades''  / ``tiempo total acumulado"}} en horas.
+En la figura \ref{fig:diagrama} se ilustra un diagrama de flujo que expone una estructura general para la ejecución del proyecto de tesis. Este proceso inicia con la gestión del proyecto y delinea una ruta cronológica que engloba el diseño, la construcción de hardware y la programación de firmware, aconteciendo estas de manera concurrente. Estas fases convergen en una etapa de pruebas, la cual es seguida por ajustes finales y la redacción de documentación académica. Finalmente, el proyecto concluye con la entrega del trabajo final. Es importante notar que cada una de las celdas del diagrama de flujo especifica el tiempo estimado para las actividades y el tiempo acumulado general, presentado en el formato: \textbf{\textit{``tiempo bloque actividades'' / ``tiempo total acumulado paralelizable / tiempo total acumulado sin paralizar''}} en horas.
+
 
 
 \begin{figure}[!hbp]
-	
 	\centering
 	\begin{tikzpicture}[node distance=2.2cm]
 	
-	\tikzstyle{block} = [rectangle, draw, fill=blue!10, text width=6em, text centered, rounded corners, minimum height=3em]
+	\tikzstyle{block} = [rectangle, draw, fill=blue!10, text width=7em, text centered, rounded corners, minimum height=3.5em]
 	\tikzstyle{line} = [draw, -latex']
 	\tikzstyle{circleblock} = [circle, draw, fill=red!10, text centered, minimum size=3em]
 	
-	\node [circleblock] (init) {Inicio (0 hs)};
-	\node [block, below of=init]              	(1) {1. Gestión (100/100 hs)};
-	\node [block, below of=1]                  	(2) {2. Diseño (60/160 hs)};
-	\node [block, left of=2, node distance=3cm]	(3) {3. Hardware (120/280 hs)};
-	\node [block, right of=2, node distance=3cm](4) {4. Firmware (110/280 hs)};
+	\node [circleblock] (init) {Inicio 0};
+	\node [block, below of=init]              	(1) {1. Gestión {\footnotesize 100/100/100}};
+	\node [block, below of=1]                  	(2) {2. Diseño (60/160/160)};
+	\node [block, left of=2, node distance=3cm, xshift=-1cm]	(3) {3. Hardware (120/280/280)}; % movido 1cm a la izquierda
+	\node [block, right of=2, node distance=3cm, xshift=1cm]	(4) {4. Firmware (110/280/390)}; % movido 1cm a la derecha
 	\node [block, below of=2]                  	(5) {5. Pruebas (80/360 hs)};
 	\node [block, below of=5]                  	(6) {6. Ajustes (40/400 hs)};
 	\node [block, below of=6]                 	(7) {7. Escritos (180/580 hs)};
@@ -54,8 +54,6 @@ El diagrama de flujo de la figura \ref{fig:diagrama}, se presenta una estructura
 	\path [line] (6) 	-- 	(7);
 	\path [line] (7) 	-- 	(8);
 	\path [line] (8) 	-- 	(fin);
-	
-	
 	\end{tikzpicture}
 	\caption{Diagrama de flujo para la gestión del proyecto}
 	\label{fig:diagrama}
