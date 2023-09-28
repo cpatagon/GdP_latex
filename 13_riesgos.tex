@@ -26,22 +26,18 @@
 Los riesgos se clasificarán mediante una escala lineal que opera en un rango de \(1\) a \(10\), fundamentándose en las características distintivas que se describen a continuación:
 
 \begin{description}
-	\item[Severidad (S):] Se asignará un valor numérico más elevado a aquellos riesgos que presenten un mayor nivel de severidad.
-	\item[Probabilidad de Ocurrencia (O):] Los riesgos con una mayor probabilidad de ocurrencia recibirán un número más alto.
+	\item[Severidad (S):] se asignará un valor numérico más elevado a aquellos riesgos que presenten un mayor nivel de severidad.
+	\item[Probabilidad de Ocurrencia (O):] los riesgos con una mayor probabilidad de ocurrencia recibirán un número más alto.
 \end{description}
 
 El número de prioridad de riesgo (RPN) se derivará mediante el producto de la Severidad (S) y la Probabilidad de Ocurrencia (O), siguiendo la fórmula:
 
 \[ S \times O = RPN \]
 
-Como resultado de la fórmula anterior, el \(0\) simboliza la prioridad más baja y el \(100\) la más alta, como se muestra en la tabla \ref{tab:rpn}. De forma arbitraria, se ha definido el \(30\) como el nivel crítico tolerable de RPN, por debajo del cual (valores menores a 30), no es imperativo implementar medidas para eliminar, mitigar o transferir el riesgo.
-
-
-
-
+Como resultado de la fórmula anterior, el \(0\) simboliza la prioridad más baja y el \(100\) la más alta, como se muestra en el cuadro \ref{tab:rpn}. De forma arbitraria, se ha definido el \(30\) como el nivel crítico tolerable de RPN, por debajo del cual (valores menores a 30), no es imperativo implementar medidas para eliminar, mitigar o transferir el riesgo.
 
 \begin{table}[htbp]
-	\caption{Escala de número de prioridad del riesgo (RPN)}
+	\caption{Escala de número de prioridad del riesgo (RPN).}
 	\label{tab:rpn}
 	\centering
 	\begin{tabular}{lc}
@@ -58,155 +54,154 @@ Como resultado de la fórmula anterior, el \(0\) simboliza la prioridad más baj
 		PELIGROSO  & \cellcolor{RedColor!70}60-70 \\
 		MUY ALTO & \cellcolor{RedColor!80}70-80 \\
 		MUY ALTO & \cellcolor{RedColor!90}80-90 \\
-		ALTISIMO & \cellcolor{RedColor}90-100 \\
+		ALTÍSIMO & \cellcolor{RedColor}90-100 \\
 		\hline
 	\end{tabular}
 \end{table}
 
 \subsection{ Identificación de los riesgos y estimación de sus consecuencias:}
-	\begin{description}
-		
-	\item[Riesgo 1:]\textbf{Mal funcionamiento de los sensores de MP2,5}
-		\begin{itemize}
-			\item \textbf{Severidad (S): 9} \\
-			Justificación: un mal funcionamiento en los sensores de MP2,5 podría generar mediciones imprecisas en la concentración de partículas. Estas mediciones erróneas pueden conducir a decisiones inadecuadas en relación con la gestión de la calidad del aire, con potenciales implicancias en la salud pública.
-			
-			\item \textbf{Probabilidad de ocurrencia (O): 7} \\
-			Justificación: la utilización de sensores de bajo costo aumenta significativamente la probabilidad de fallos y, por ende, de mediciones incorrectas.
-			\item \textbf{Número de prioridad de riesgo (RPN): 63} \\
-		\end{itemize}
-
-
-    \item[Riesgo 2:] \textbf{Autoridades no aceptan como válidas las mediciones realizadas con sensores de MP2,5 de bajo costo}   	 
-		\begin{itemize}
-			\item \textbf{Severidad (S): 7}\\
-			Justificación: los sensores ópticos no están actualmente reconocidos por la Agencia de Protección Ambiental (EPA) como una técnica analítica estándar para la medición de MP2,5.
-			
-			\item \textbf{Probabilidad de ocurrencia (O): 8} \\
-			Justificación: muchos países mantienen los métodos gravimétricos como una técnica analítica normada para la medición de las concentraciones MP2,5 atmosférico.
-			\item \textbf{Número de prioridad de riesgo (RPN): 56} \\
-		\end{itemize}  
- 
+\begin{description}
 	
-	\item[Riesgo 3:] \textbf{\underline{Fallo en la transmisión de datos en línea}}
+	\item[Riesgo 1:]\textbf{mal funcionamiento de los sensores de MP2,5}
+	\begin{itemize}
+		\item \textbf{Severidad (S): 9} \\
+		Justificación: un mal funcionamiento en los sensores de MP2,5 podría generar mediciones imprecisas en la concentración de partículas. Estas mediciones erróneas pueden conducir a decisiones inadecuadas en relación con la gestión de la calidad del aire, con potenciales implicancias en la salud pública.
+		
+		\item \textbf{Probabilidad de ocurrencia (O): 7} \\
+		Justificación: la utilización de sensores de bajo costo aumenta significativamente la probabilidad de fallos y, por ende, de mediciones incorrectas.
+		\item \textbf{Número de prioridad de riesgo (RPN): 63} \\
+	\end{itemize}
+	
+	
+	\item[Riesgo 2:] \textbf{autoridades no aceptan como válidas las mediciones realizadas con sensores de MP2,5 de bajo costo}  	 
+	\begin{itemize}
+		\item \textbf{Severidad (S): 7}\\
+		Justificación: los sensores ópticos no están actualmente reconocidos por la Agencia de Protección Ambiental (EPA) como una técnica analítica estándar para la medición de MP2,5.
+		
+		\item \textbf{Probabilidad de ocurrencia (O): 8} \\
+		Justificación: en numerosos países aún usan los métodos gravimétricos como una técnica analítica establecida en la normativa, para la evaluación de las concentraciones MP2,5 atmosféricas.
+		\item \textbf{Número de prioridad de riesgo (RPN): 56} \\
+	\end{itemize}  
+	
+	
+	\item[Riesgo 3:] \textbf{fallo en la transmisión de datos en línea}
 	\begin{itemize}
 		\item \textbf{Severidad (S): 6} \\
-		Justificación: un fallo en la transmisión de datos puede provocar una pérdida de información momentánea en el servidor central encargado de administrar los datos. Esta situación podría ocasionar la pérdida de la oportunidad de tomar decisiones informadas y a tiempo respecto a la calidad del aire o del funcionamiento del instrumento.
+		Justificación: un fallo en la transmisión de datos puede provocar una pérdida de información momentánea en el servidor central encargado de administrar los datos. Esta situación podría tener como consecuencia la pérdida de la oportunidad de tomar decisiones oportunas en cuanto a la calidad del aire o el funcionamiento del instrumento.
 		
 		\item \textbf{Probabilidad de ocurrencia (O): 5} \\
-		Justificación: es común experimentar pérdidas en la conexión inalámbrica debido a diversas fallas como interrupciones del servicio de internet, cortes de suministro eléctrico, impago de la cuenta de internet, entre otros. 
-		 
+		Justificación: es habitual experimentar pérdidas en la conexión inalámbrica debido a diversas deficiencias, tales como interrupciones en el servicio de internet, interrupciones en el suministro eléctrico, impago en la cuenta de internet, entre otras.
+		
 		\item \textbf{Número de prioridad de riesgo (RPN): 30} \\
 	\end{itemize}
-
 	
-	\item[Riesgo 4:] \underline{\textbf{Interrupción de energía en el sistema}}
+	
+	\item[Riesgo 4:] \textbf{interrupción de energía en el sistema}
 	\begin{itemize}
 		\item \textbf{Severidad (S): 8} \\
-		Justificación: una interrupción en el suministro de energía puede llevar a pérdidas de medición durante periodos de tiempo determinados, afectando la continuidad y la integridad de los datos registrados.
+		Justificación: una interrupción en el suministro de energía puede provocar pérdidas de medición durante períodos de tiempo determinados, lo que afecta la continuidad y la integridad de los datos registrados.
 		
 		\item \textbf{Probabilidad de ocurrencia (O): 4} \\
-		Justificación: aunque la posibilidad de interrupciones en el suministro de energía es real, en entornos urbanos la frecuencia de estos eventos tiende a ser baja, debido a la infraestructura y los respaldos energéticos existentes.
+		Justificación: a pesar de que la posibilidad de interrupciones en el suministro de energía es efectiva, en áreas urbanas, la frecuencia de estos acontecimientos tiende a ser reducida debido a la infraestructura y los respaldos energéticos existentes.
 		
 		\item \textbf{Número de prioridad de riesgo (RPN): 32} \\
-
+		
 	\end{itemize}
-
 	
-	\item[Riesgo 5:] \underline{\textbf{Manipulación o actos vandalismo en las estaciones de monitoreo}}
+	
+	\item[Riesgo 5:] \textbf{manipulación o actos vandalismo en las estaciones de monitoreo}
 	\begin{itemize}
 		\item \textbf{Severidad (S): 8} \\
-		Justificación: la manipulación indebida o actos de vandalismo dirigidos a las estaciones de monitoreo podrían comprometer la calidad y confiabilidad de los datos recabados, afectando la integridad del sistema de monitoreo y, por ende, la validez de los análisis subsiguientes.
+		Justificación: la manipulación indebida del instrumento o actos de vandalismo dirigidos a las estaciones de monitoreo podrían comprometer la calidad y confiabilidad de los datos recabados, afectando la integridad del sistema de monitoreo y, por ende, la validez de los análisis subsiguientes.
 		
 		\item \textbf{Probabilidad de ocurrencia (O): 3} \\
 		Justificación: a pesar de que las estaciones se localizan en zonas consideradas seguras y sujetas a vigilancia, la posibilidad de incidencias de vandalismo o manipulación indebida persiste, aunque a un nivel reducido.
 		
 		\item \textbf{Número de prioridad de riesgo (RPN): 24} \\
 	\end{itemize}
-
 	
-\item[Riesgo 6:] \underline{\textbf{Pérdida de sincronización del Reloj de Tiempo Real (RTC)}}
-\begin{itemize}
-	\item \textbf{Severidad (S): 7} \\
-	Justificación: la pérdida de sincronización del reloj de tiempo real (RTC) conlleva que los datos adquiridos pierdan exactitud en sus etiquetas temporales. Esto impide discernir el instante de cada medición, lo cual puede degradar significativamente la utilidad y relevancia de los datos recopilados, afectar calibraciones y, en casos extremos, volver los datos inservibles.
 	
-	\item \textbf{Probabilidad de ocurrencia (O): 3} \\
-	Justificación: los RTC actuales, como el DS3231, son robustos y mantienen una precisión considerable, con desviaciones menores al minuto a lo largo de un año, lo que hace que la probabilidad de desincronización sea relativamente baja, pero existente.
+	\item[Riesgo 6:] \textbf{pérdida de sincronización del Reloj de Tiempo Real (RTC)}
+	\begin{itemize}
+		\item \textbf{Severidad (S): 7} \\
+		Justificación: la pérdida de sincronización del reloj de tiempo real (RTC), implica que los datos adquiridos pierdan exactitud en sus etiquetas temporales. Esto impide discernir el instante en que ocurre cada medición, lo que puede degradar significativamente la utilidad y relevancia de los datos recopilados, afectar calibraciones y, en casos extremos, volver los datos inservibles.
+		
+		\item \textbf{Probabilidad de ocurrencia (O): 3} \\
+		Justificación: los RTC actuales, como el DS3231, son robustos y mantienen una precisión considerable, con desviaciones menores al minuto a lo largo de un año, lo que hace que la probabilidad de perder la sincronización sea relativamente baja, pero existente.
+		
+		\item \textbf{Número de prioridad de riesgo (RPN): 21} \\
+	\end{itemize}
 	
-	\item \textbf{Número de prioridad de riesgo (RPN): 21} \\
-\end{itemize}
-
-
-
-
+	
+	
+	
 \end{description}
 
 
 \subsection{Plan de mitigación de los riesgos}
 
-Se implementarán estrategias de mitigación para los riesgos que presenten Número de prioridad de riesgo (\textbf{RPN}) superiores a 25. Dichas estrategias estarán detalladas a continuación y afectarán directamente tanto a la severidad (\textbf{S}) como a la probabilidad de ocurrencia (\textbf{\textit{O}}) de los riesgos identificados. La severidad y probabilidad de ocurrencia modificadas tras la implementación del plan de mitigación se denotarán como \textbf{S*} y \textbf{O*}, respectivamente. Estas modificaciones podrán dar como resultado un nuevo \textbf{RPN*}, el que deberá, en la medida de lo posible, ajustarse al criterio de aceptabilidad previamente establecido, es decir, ser inferior a 25.
+Se implementarán estrategias de mitigación para los riesgos que presenten número de prioridad de riesgo (\textbf{RPN}) iguales o superiores a 25. Dichas estrategias estarán detalladas a continuación y afectarán directamente tanto a la severidad (\textbf{S}) como a la probabilidad de ocurrencia (\textbf{\textit{O}}) de los riesgos identificados. La severidad y probabilidad de ocurrencia modificadas tras la implementación del plan de mitigación se denotarán como \textbf{S*} y \textbf{O*}, respectivamente. Estas modificaciones podrán dar como resultado un nuevo \textbf{RPN*}, el que deberá, en la medida de lo posible, ajustarse al criterio de aceptabilidad previamente establecido, es decir, ser inferior a 25.
 
 \begin{description}
-	\item[Riesgo 1:]\textbf{Mal funcionamiento de los sensores de MP2,5}
-		\begin{itemize}
-			\item \textbf{Plan de mitigación:} para cada equipo, se incorporarán tres sensores, y, en caso de fallo de alguno de ellos, se remitirá un código de falla al administrador.
-			\item \textbf{Severidad (S*): 9} \\
-			Efecto de la medida: A pesar de las medidas de mitigación, la severidad del efecto en caso de fallo del sensor se mantiene.
-			\item \textbf{Probabilidad de ocurrencia (O*): 2} \\
-			Efecto de la medida: se anticipa una reducción en la probabilidad de fallo integral del instrumento. La inclusión de múltiples sensores permite que, en caso de fallo de uno, los demás continúen operativos, permitiendo el aviso inmediato al administrador mediante el envío de un código de falla, lo que previene interrupciones totales en la medición.
-			\item \textbf{Número de prioridad de riesgo (RPN*): 18} 
-		\end{itemize}
-	
-
-
-    \item[Riesgo 2:] \textbf{Autoridades no aceptan como válidas las mediciones realizadas con sensores de MP2,5 de bajo costo}   	 
-		\begin{itemize}
-			
-			\item \textbf{Plan de mitigación:} realización de pruebas de calibración con sensores que cuenten con la aprobación EPA o su equivalencia para MP2,5. Mostrar a las autoridades, mediante estudios y pruebas de calibración,que este tipo de instrumentos pueden ser puntos de medición complementarios, que aportan mayor densidad  de muestreo a las actuales redes de monitoreo de calidad del aire. Y mostrar la robustez del sistema estadístico planteado y el bajo costo que implica esta tecnología.   
-			\item \textbf{Severidad (S*): 6} \\
-			Efecto de la medida: sobre la base los antecedentes aportados por la calibración y los costos comparados de esta tecnología, los servicios ambientales y gobiernos locales acepten emplear este tipo de tecnologías como métodos alternativos y complementarios para sus monitoreos de la calidad del aire. cabe mencionar que esta tecnología presenta incertidumbre de operación en un rango amplio de concentraciones. Por ejemplo en concentraciones muy altas por lo que la severidad no desaparecerá del todo.
-	
-			\item \textbf{Probabilidad de ocurrencia (O*): 4} \\
-			Efecto de la medida: en actualidad, en base a resultados de investigaciones y pruebas pilotos, algunos servicios ambientales y gobiernos locales se están abriendo a emplear metodologías de bajo costo para ampliar sus redes de monitoreo o tener primeras aproximaciones de las calidad del aire en centros urbanos.
-			\item \textbf{Número de prioridad de riesgo (RPN*): 24} 
-			\end{itemize}	
-			
-		\item[Riesgo 3:] \textbf{\underline{Fallo en la transmisión de datos en línea}}
+	\item[Riesgo 1:]\textbf{mal funcionamiento de los sensores de MP2,5}
 	\begin{itemize}
-			\item \textbf{Plan de mitigación:} se sugiere equipar el instrumento con un sistema de almacenamiento local de datos, lo que permitiría recuperar los datos ausentes en caso de una desconexión.
-			
-			\item \textbf{Severidad (S*): 2} \\
-			Efecto de la medida: dado que los datos pueden ser recuperados mediante el almacenamiento local de datos, la severidad del problema se reduce significativamente.
-			
-			\item \textbf{Probabilidad de ocurrencia (O*): 5} \\
-			Efecto de la medida: no se anticipan cambios en la frecuencia de interrupciones, ya que se continuará utilizando el mismo sistema de conexión.
-			
-			\item \textbf{Número de prioridad de riesgo (RPN*): 10}
+		\item \textbf{Plan de mitigación:} para cada instrumento, se incorporarán tres sensores, y, en caso de fallo de alguno de ellos, se remitirá un código de falla al administrador mediante el sistema de comunicación inalámbrica hacia el servidor de datos.
+		\item \textbf{Severidad (S*): 9} \\
+		Efecto de la medida: a pesar de la medida de mitigación, la severidad del efecto en caso de fallo del sensor se mantiene.
+		\item \textbf{Probabilidad de ocurrencia (O*): 2} \\
+		Efecto de la medida: se anticipa una reducción en la probabilidad de fallo integral del instrumento. La inclusión de múltiples sensores permite que, en caso de fallo de uno, los demás continúen operativos, permitiendo el aviso inmediato al administrador mediante el envío de un código de falla, lo que previene interrupciones totales en la medición.
+		\item \textbf{Número de prioridad de riesgo (RPN*): 18}
 	\end{itemize}
-
-			\item[Riesgo 4:] \textbf{\underline{Interrupción de energía en el sistema}}
+	
+	\item[Riesgo 2:] \textbf{autoridades no aceptan como válidas las mediciones realizadas con sensores de MP2,5 de bajo costo}  	 
 	\begin{itemize}
-			\item \textbf{Plan de mitigación:} se implementará un sistema de respaldo energético, como baterías, para asegurar una autonomía limitada en caso de cortes de energía. Asimismo, se planea habilitar opciones de modo de bajo consumo para el instrumento, durante los cortes, pueda apagar componentes de transmisión de datos o reducir la frecuencia de muestreo, por ejemplo.
-			
-			\item \textbf{Severidad (S*): 6} \\
-			Efecto de la medida: la implementación de un respaldo energético permitirá mantener el instrumento en funcionamiento durante cortes de energía, probablemente por algunos minutos adicionales.
-			
-			\item \textbf{Probabilidad de ocurrencia (O*): 2} \\
-			Efecto de la medida: Se anticipa que los cortes breves de energía, comunes en algunos sistemas eléctricos, no afectarán el funcionamiento normal del instrumento. Sin embargo, los cortes prolongados de energía pueden seguir siendo problemáticos.
-			
-			\item \textbf{Número de prioridad de riesgo (RPN*): 12}
+		
+		\item \textbf{Plan de mitigación:} realización de pruebas de calibración con sensores que cuenten con la aprobación EPA o su equivalencia para MP2,5. Mostrar a las autoridades, mediante estudios y pruebas de calibración, que este tipo de equipos pueden ser instrumentos de medición complementarios, que aportan mayor densidad  de muestreo a las actuales redes de monitoreo de calidad del aire. Se expondrá la robustez del sistema estadístico concebido y el bajo costo que abarca esta tecnología.   
+		\item \textbf{Severidad (S*): 6} \\
+		Efecto de la medida: sobre la base los antecedentes aportados por la calibración y los costos comparados de esta tecnología, se espera que los servicios ambientales y gobiernos locales incorporen paulatinamente este tipo de tecnologías como métodos alternativos o complementarios para sus monitoreos de la calidad del aire. Es importante señalar que esta tecnología presenta problemas de funcionamiento conocidos en concentraciones extremas, por lo que la severidad no desaparecerá del todo.
+		
+		\item \textbf{Probabilidad de ocurrencia (O*): 4} \\
+		Efecto de la medida: en actualidad, sobre la base de resultados de investigaciones y pruebas pilotos, algunos servicios ambientales y gobiernos locales se están dispuestos a emplear metodologías de bajo costo para ampliar sus redes de monitoreo o tener primeras aproximaciones de la calidad del aire en centros urbanos.
+		\item \textbf{Número de prioridad de riesgo (RPN*): 24}
+	\end{itemize}    
+	
+	\item[Riesgo 3:] \textbf{{fallo en la transmisión de datos en línea}}
+	\begin{itemize}
+		\item \textbf{Plan de mitigación:} se incorporará en el instrumento un sistema de almacenamiento local de datos, lo que permitiría recuperar los datos que no puedan ser enviados al servidor remoto, en caso de una desconexión.
+		
+		\item \textbf{Severidad (S*): 2} \\
+		Efecto de la medida: dado que los datos pueden ser recuperados mediante el almacenamiento local, la severidad del problema se reduce significativamente. Asimismo, existirá duplicidad de información en dos lugares distintos, lo que dificultará la pérdida de información.
+		\item \textbf{Probabilidad de ocurrencia (O*): 5} \\
+		Efecto de la medida: no se anticipan cambios en la frecuencia de interrupciones, ya que se continuará utilizando el mismo sistema de conexión.
+		
+		\item \textbf{Número de prioridad de riesgo (RPN*): 10}
 	\end{itemize}
-
- 
+	
+	\item[Riesgo 4:] \textbf{{interrupción de energía en el sistema}}
+	\begin{itemize}
+		\item \textbf{Plan de mitigación:} se implementará un sistema de respaldo energético, como baterías, para asegurar una autonomía limitada en caso de cortes de energía eléctrica. Asimismo, se planea habilitar opciones de bajo consumo para el instrumento durante los cortes eléctricos, que permitan de manera autónoma apagar componentes no críticos como son: transmisión de datos o reducir la frecuencia de muestreo, por ejemplo.
+		
+		\item \textbf{Severidad (S*): 6} \\
+		Efecto de la medida: la implementación de un respaldo energético permitirá mantener el instrumento en funcionamiento durante cortes de energía, probablemente por algunos minutos adicionales.
+		
+		\item \textbf{Probabilidad de ocurrencia (O*): 2} \\
+		Efecto de la medida: se anticipa que los cortes breves de energía, comunes en algunos sistemas eléctricos, no afectarán el funcionamiento normal del instrumento. Sin embargo, los cortes prolongados de energía pueden seguir siendo problemáticos.
+		
+		\item \textbf{Número de prioridad de riesgo (RPN*): 12}
+	\end{itemize}
+	
+	
 \end{description}
 
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \subsection{Gestión de riesgos}
 
 
-A partir de los resultados adquiridos del análisis de riesgo y su respectiva gestión, se exhibe el Cuadro~\ref{tab:gestionriesgo}. En él se sintetizan, tanto de forma numérica como gráfica, los impactos de las estrategias de mitigación en el \textbf{RPN}. El Cuadro~\ref{tab:gestionriesgo} evidencia que las estrategias de gestión propuestas consiguen reducir el riesgo a niveles aceptables, conforme a los criterios previamente establecidos.
+A partir de los resultados adquiridos del análisis de riesgo y su respectiva gestión, se exhibe el cuadro~\ref{tab:gestionriesgo}. En él se sintetizan, tanto de forma numérica como gráfica, los impactos de las estrategias de mitigación en el \textbf{RPN}. El cuadro~\ref{tab:gestionriesgo} evidencia que las estrategias de gestión propuestas consiguen reducir el riesgo a niveles aceptables, conforme a los criterios previamente establecidos.
 
 
 	
