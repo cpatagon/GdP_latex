@@ -1,3 +1,4 @@
+%!TEX root = DisenoProyecto_LuisGomez.tex
 \def\filename{charter.cls}
 \def\fileversion{v. 0.1.0}
 \def\filedate{junio 1, 2020}
@@ -200,8 +201,8 @@
 	%\vspace{2cm}
 	\ifbool{codirector}{% If the codirector class option has been specified
 	\vspace{10px}
-	{\normalsize Codirector:\\}
-	{\Large \cosupname  \hspace{1px} (\pertecosupname) \\}
+%	{\normalsize Codirector:\\}
+%	{\Large \cosupname  \hspace{1px} (\pertecosupname) \\}
 	}{\vspace{2pc}%nothing
 	}
 		
