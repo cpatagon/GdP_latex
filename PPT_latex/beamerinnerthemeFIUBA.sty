@@ -1,0 +1,116 @@
+%%Beamer theme "FIUBA", version 0
+%%Copyright Luis Gómez lgomez@patagones.cl
+%%22 sep 2023. distributed under the GNU GPL Licence.
+\usepackage{transparent}
+\usepackage[export]{adjustbox}
+\usepackage{tikz, graphicx}
+\usepackage{tikz}
+\usepackage[absolute,overlay]{textpos}
+\mode<presentation>
+% %
+% arduino color
+% Teal	Light Teal	Orange	Yellow	Brown
+% #00878F	#62AEB2	#E47128	#E5AD24	#8C7965
+\definecolor{CR2}{HTML}{00878f}
+\definecolor{CR2NN}{HTML}{E47128}
+%%This draws the background
+\setbeamertemplate{background}{
+	
+	\begin{tikzpicture}[espiral/.style={thick,color=edgescolor}]
+	
+	% Define el cuadro delimitador del dibujo, en este caso, el tamaño del papel.
+	\useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+	
+	% Rellena rectángulos con los colores definidos CR2 y CR2NN.
+	\fill[color=CR2]   (0,0) rectangle(0.33\paperwidth, \the\paperheight);
+	\fill[color=CR2NN] (0.33\paperwidth,0) rectangle (0.343\paperwidth,12); 
+	
+	% Si el número de página es menor que 2, incluye gráficos.
+	\ifnum\thepage<2 
+
+		
+	\node[anchor=north east, inner sep=0pt, outer sep=5pt] at (current page.north east) {
+		\includegraphics[trim=0cm 0cm 0cm 0cm, width=0.35\paperwidth,height=0.2\paperheight]{logo/logoFIUBA.pdf}
+	};
+	\fi; 
+	
+
+
+	
+	%logo grande en la parte central 
+	% Otra imagen si el número de página es menor que 2, con transparencia 1 (sin transparencia).
+	
+	\ifnum\thepage<2 
+	{\transparent{1}
+%		\includegraphics[trim=-1.25cm -18cm 0 0cm, width=0.2\paperwidth, height=0.2\paperheight, angle=0]{logo/logoFIUBA.pdf}
+	}
+	\fi; 
+	
+	% Si el número de página es mayor que 1, realiza más rellenos de rectángulos, sobreponiendo el fondo blanco.
+	\ifnum\thepage>1\relax%
+	\fill[white, opacity=1] (0,0) rectangle(\the\paperwidth, \the\paperheight);
+	\fill[color=CR2] (0,0) rectangle(0.059\paperwidth, \the\paperheight);
+	\fill[color=CR2NN] (0.059\paperwidth,0) rectangle (0.062\paperwidth,\the\paperheight); % rectangulo naranja
+	\fi
+	\end{tikzpicture}
+}
+
+\setbeamerfont{date}{size=\small, shape=\upshape}
+\setbeamerfont{title}{size=\Huge, shape=\mdseries}
+\setbeamerfont{institute}{size=\small, shape=\itshape}
+
+%%Define la plantilla para la página de título
+\defbeamertemplate*{title page}{Cuerna}[1][]
+{
+	%Crea un bloque de texto para el encabezado de la página de título.
+	\begin{textblock}{9}(6,7)
+		\begin{beamercolorbox}[left,sep=5pt,#1]{title page header}
+			%Inserta el título utilizando la fuente definida para el título.
+			\usebeamerfont{title}\inserttitle\par%
+		\end{beamercolorbox}
+	\end{textblock}
+	
+	%Agrega un espacio vertical de 8.8cm.
+	\vskip 8.8cm%
+	
+	%Crea otro bloque de texto para el autor.
+	\begin{textblock}{9}(8,12.5)
+		\begin{beamercolorbox}[left,wd=10cm,leftskip=0.2cm,#1]{author}
+			%Inserta el nombre del autor utilizando la fuente definida para el autor.
+			\usebeamerfont{author}\insertauthor%
+		\end{beamercolorbox}
+	\end{textblock}
+	
+	%Agrega un espacio vertical de 0.1cm.
+	\vskip0.1cm%
+	
+	%Crea un colorbox para la institución.
+	\begin{beamercolorbox}[wd=70cm, #1]{institute}
+		%Inserta el nombre de la institución utilizando la fuente definida para la institución.
+		\usebeamerfont{institute}\insertinstitute
+	\end{beamercolorbox}
+	
+	%Crea un bloque de texto para la fecha.
+	\begin{textblock}{6}(9.3,5)
+		\begin{beamercolorbox}[right]{date}
+			%Inserta la fecha utilizando la fuente definida para la fecha.
+			\usebeamerfont{date}\insertdate%
+		\end{beamercolorbox}
+	\end{textblock}
+	
+	%Logo en la parte inferior.
+%	\begin{textblock}{4}(14,13)
+%		\insertlogo %Inserta el logo definido anteriormente.
+%	\end{textblock}
+	
+	\vfill %Rellena verticalmente el espacio restante.
+}
+
+
+%Lists and the table of contents
+\setbeamertemplate{items}[square]
+
+\setbeamertemplate{sections/subsections in toc}[square]
+
+
+\mode<all>

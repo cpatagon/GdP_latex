@@ -1,0 +1,52 @@
+%%Beamer theme "FIUBA", version 0
+%%Copyright Luis Gómez lgomez@patagones.cl
+%%22 sep 2023. distributed under the GNU GPL Licence.
+
+\mode<presentation> % Establece el modo de presentación para el documento
+
+\setbeamerfont{sectiontitle}{size=\huge, shape=\scshape} % Configura el tamaño y forma de la fuente para el título de sección.
+
+% Barra de título
+\defbeamertemplate*{frametitle}{CR2}[1][]
+{
+	\vskip0.1cm % Agrega un pequeño espacio vertical
+	\begin{beamercolorbox}[right]{sectiontitle} % Comienza una caja de color para el título de la sección
+		\usebeamerfont{date}\insertsection % Inserta la sección actual con la fuente definida
+	\end{beamercolorbox} % Finaliza la caja de color para el título de sección
+	\vskip-0.2cm % Reduce un pequeño espacio vertical
+	
+	% Define los colores personalizados
+	\definecolor{imred}{HTML}{00878f}
+	\definecolor{imyellow}{HTML}{FCED27}
+	\definecolor{imorange}{HTML}{F6B419}
+	
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.5cm]{frametitle} % Comienza una caja de color para el título del marco
+		\begin{tikzpicture} % Inicia un entorno de dibujo TikZ
+		\useasboundingbox (0,0) rectangle(\the\paperwidth,1.4); % Define el área de dibujo
+		
+		% Inserta el logo
+		{\node[anchor=west, white] at (0, 0.8){\insertlogo};} 
+		\fill[squarecolor](2.45, 0.4) rectangle(\paperwidth,1.4); % Llena el área definida con el color especificado
+		
+		% Verifica si existe un subtítulo en el marco
+		\ifx\insertframesubtitle\@empty
+		{\node[anchor=west, white, font=\large] at (3.0,0.82){\insertframetitle};} % Si no existe, inserta solo el título del marco
+		\else
+		{\node[anchor=west, white, font=\large] at (3.0, 1.02){\insertframetitle}; % Si existe, inserta el título y el subtítulo del marco
+			\node[anchor=west, white, font=\small] at (3.0, 0.63){\insertframesubtitle};} 
+		\fi
+		\end{tikzpicture} % Finaliza el entorno de dibujo TikZ
+	\end{beamercolorbox} % Finaliza la caja de color para el título del marco
+	\vskip-0.5cm % Reduce un pequeño espacio vertical
+}
+
+% Sidebar
+\defbeamertemplate*{sidebar right}{sidebar theme}
+{%
+	\vfill % Añade espacio vertical flexible
+	\llap{\usebeamertemplate***{navigation symbols}\hskip0.3cm} % Inserta los símbolos de navegación alineados a la izquierda
+	\vskip2pt % Añade un pequeño espacio vertical
+}
+
+\mode<all> % Finaliza el modo de presentación y vuelve al modo normal
+
